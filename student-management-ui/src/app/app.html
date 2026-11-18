@@ -1,1 +1,30 @@
-<router-outlet></router-outlet>
+
+<div class="app-container">
+
+  <header class="navbar">
+
+    <div class="brand">
+      <span class="brand-icon">🎓</span>
+      <h2>Student Portal</h2>
+    </div>
+
+    <nav>
+      <a routerLink="/students"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Student List
+      </a>
+
+      <a routerLink="/students/create"
+         routerLinkActive="active">
+        Add Student
+      </a>
+    </nav>
+
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
