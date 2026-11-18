@@ -2,7 +2,8 @@
 
   <h2>Student List</h2>
   <p>View all registered students</p>
-  @if (students.length > 0) {
+
+  @if (students().length > 0) {
 
     <table>
       <thead>
@@ -13,21 +14,29 @@
           <th>Email</th>
           <th>Phone Number</th>
           <th>Department ID</th>
+          <th>Actions</th>
         </tr>
       </thead>
 
       <tbody>
-  @for (student of students; track student.studentId) {
-    <tr>
-      <td>{{ student.studentId }}</td>
-      <td>{{ student.studentName }}</td>
-      <td>{{ student.gender }}</td>
-      <td>{{ student.email }}</td>
-      <td>{{ student.phoneNumber }}</td>
-      <td>{{ student.departmentId }}</td>
-    </tr>
-  }
-</tbody>
+        @for (student of students(); track student.studentId) {
+          <tr>
+            <td>{{ student.studentId }}</td>
+            <td>{{ student.studentName }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.phoneNumber }}</td>
+            <td>{{ student.departmentId }}</td>
+            <td>
+              <button
+                class="delete-btn"
+                (click)="deleteStudent(student.studentId!)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
     </table>
 
   } @else {

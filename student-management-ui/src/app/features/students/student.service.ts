@@ -26,4 +26,7 @@ getStudentById(id: number): Observable<Student> {
 updateStudent(id: number, student: Student): Observable<any> {
   return this.http.put(`${this.apiUrl}/${id}`, student);
 }
+deleteStudent(id: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/${id}`);
+}
 }
