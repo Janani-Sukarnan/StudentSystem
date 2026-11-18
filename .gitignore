@@ -1,0 +1,21 @@
+
+# .NET generated files
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+
+# Angular generated files
+**/node_modules/
+**/.angular/
+**/dist/
+**/coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Local settings and secrets
+**/appsettings.Development.json
+**/appsettings.*.local.json

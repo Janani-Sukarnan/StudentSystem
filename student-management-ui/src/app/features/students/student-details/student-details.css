@@ -1,0 +1,67 @@
+.student-details-container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 25px;
+}
+
+.student-details-container h2 {
+  color: #0f766e;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.student-details-container p {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.student-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #0f766e;
+}
+
+.student-card h3 {
+  color: #0f766e;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.details-row strong {
+  color: #334155;
+}
+
+.details-row span {
+  color: #64748b;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 576px) {
+  .student-details-container {
+    padding: 15px;
+  }
+
+  .student-card {
+    padding: 20px;
+  }
+
+  .details-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .details-row span {
+    text-align: left;
+  }
+}

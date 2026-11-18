@@ -1,0 +1,34 @@
+﻿
+using Student_Management_System.Data;
+using Student_Management_System.Models;
+using Student_Management_System.Repositories.Interfaces;
+
+namespace Student_Management_System.Repositories
+{
+    public class StudentRepository : IStudentRepository
+    {
+        private readonly ApplicationDbContext _context;
+
+        public StudentRepository(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public Student AddStudent(Student student)
+        {
+            _context.Students.Add(student);
+
+            _context.SaveChanges();
+
+            return student;
+        }
+        public List<Student> GetAllStudents()
+        {
+            return _context.Students.ToList();
+        }
+        public Student? GetStudentById(int id)
+        {
+            return _context.Students.FirstOrDefault(s => s.StudentId == id);
+        }
+    }
+}

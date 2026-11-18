@@ -1,0 +1,41 @@
+<div class="student-details-container">
+
+  <h2>Student Details</h2>
+  <p>View complete information about the student</p>
+
+  @if (student) {
+    <div class="student-card">
+
+      <h3>{{ student.studentName }}</h3>
+
+      <div class="details-row">
+        <strong>Student ID:</strong>
+        <span>{{ student.studentId }}</span>
+      </div>
+
+      <div class="details-row">
+        <strong>Gender:</strong>
+        <span>{{ student.gender }}</span>
+      </div>
+
+      <div class="details-row">
+        <strong>Email:</strong>
+        <span>{{ student.email }}</span>
+      </div>
+
+      <div class="details-row">
+        <strong>Phone Number:</strong>
+        <span>{{ student.phoneNumber }}</span>
+      </div>
+
+      <div class="details-row">
+        <strong>Department ID:</strong>
+        <span>{{ student.departmentId }}</span>
+      </div>
+
+    </div>
+  } @else {
+    <p>Loading student details...</p>
+  }
+
+</div>
