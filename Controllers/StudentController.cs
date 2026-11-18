@@ -65,5 +65,25 @@ namespace Student_Management_System.Controllers
             });
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteStudent(int id)
+        {
+            var isDeleted = _studentService.DeleteStudent(id);
+
+            if (!isDeleted)
+            {
+                return NotFound(new
+                {
+                    message = "Student not found."
+                });
+            }
+
+            return Ok(new
+            {
+                message = "Student deleted successfully."
+            });
+        }
+
+
     }
 }

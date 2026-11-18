@@ -97,6 +97,19 @@ namespace Student_Management_System.Services
 
             return true;
         }
+        public bool DeleteStudent(int id)
+        {
+            var student = _studentRepository.GetStudentById(id);
+
+            if (student == null)
+            {
+                return false;
+            }
+
+            _studentRepository.DeleteStudent(student);
+
+            return true;
+        }
 
     }
 }

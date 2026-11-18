@@ -35,5 +35,10 @@ namespace Student_Management_System.Repositories
             _context.Students.Update(student);
             _context.SaveChanges();
         }
+        public void DeleteStudent(Student student)
+        {
+            _context.Students.Remove(student);
+            _context.SaveChanges();
+        }
     }
 }

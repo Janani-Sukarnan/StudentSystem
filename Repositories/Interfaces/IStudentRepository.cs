@@ -9,5 +9,6 @@ namespace Student_Management_System.Repositories.Interfaces
         List<Student> GetAllStudents();
         Student? GetStudentById(int id);
         void UpdateStudent(Student student);
+        void DeleteStudent(Student student);
     }
 }

@@ -9,5 +9,6 @@ namespace Student_Management_System.Services.Interfaces
         List<StudentResponseDto> GetAllStudents();
         StudentResponseDto? GetStudentById(int id);
         bool UpdateStudent(int id, StudentUpdateDto studentDto);
+        bool DeleteStudent(int id);
     }
 }
