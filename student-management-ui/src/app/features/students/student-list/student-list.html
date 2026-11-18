@@ -27,13 +27,27 @@
             <td>{{ student.email }}</td>
             <td>{{ student.phoneNumber }}</td>
             <td>{{ student.departmentId }}</td>
-            <td>
-              <button
-                class="delete-btn"
-                (click)="deleteStudent(student.studentId!)">
-                Delete
-              </button>
-            </td>
+            <td class="actions">
+
+  <a
+    [routerLink]="['/students', student.studentId]"
+    class="view-btn">
+    View
+  </a>
+
+  <a
+    [routerLink]="['/students', student.studentId, 'edit']"
+    class="edit-btn">
+    Edit
+  </a>
+
+  <button
+    class="delete-btn"
+    (click)="deleteStudent(student.studentId!)">
+    Delete
+  </button>
+
+</td>
           </tr>
         }
       </tbody>
