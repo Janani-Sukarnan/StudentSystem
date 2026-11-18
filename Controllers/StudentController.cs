@@ -45,5 +45,25 @@ namespace Student_Management_System.Controllers
 
             return Ok(response);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateStudent(int id, [FromBody] StudentUpdateDto studentDto)
+        {
+            var isUpdated = _studentService.UpdateStudent(id, studentDto);
+
+            if (!isUpdated)
+            {
+                return NotFound(new
+                {
+                    message = "Student not found."
+                });
+            }
+
+            return Ok(new
+            {
+                message = "Student updated successfully."
+            });
+        }
+
     }
 }

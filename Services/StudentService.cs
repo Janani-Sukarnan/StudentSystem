@@ -77,5 +77,26 @@ namespace Student_Management_System.Services
 
             return response;
         }
+
+        public bool UpdateStudent(int id, StudentUpdateDto studentDto)
+        {
+            var student = _studentRepository.GetStudentById(id);
+
+            if (student == null)
+            {
+                return false;
+            }
+
+            student.StudentName = studentDto.StudentName;
+            student.Gender = studentDto.Gender;
+            student.Email = studentDto.Email;
+            student.PhoneNumber = studentDto.PhoneNumber;
+            student.DepartmentId = studentDto.DepartmentId;
+
+            _studentRepository.UpdateStudent(student);
+
+            return true;
+        }
+
     }
 }

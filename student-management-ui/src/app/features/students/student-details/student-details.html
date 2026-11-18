@@ -1,9 +1,10 @@
+
 <div class="student-details-container">
 
   <h2>Student Details</h2>
   <p>View complete information about the student</p>
 
-  @if (student) {
+  @if (student(); as student) {
     <div class="student-card">
 
       <h3>{{ student.studentName }}</h3>

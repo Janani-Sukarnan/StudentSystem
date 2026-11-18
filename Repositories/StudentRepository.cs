@@ -30,5 +30,10 @@ namespace Student_Management_System.Repositories
         {
             return _context.Students.FirstOrDefault(s => s.StudentId == id);
         }
+        public void UpdateStudent(Student student)
+        {
+            _context.Students.Update(student);
+            _context.SaveChanges();
+        }
     }
 }

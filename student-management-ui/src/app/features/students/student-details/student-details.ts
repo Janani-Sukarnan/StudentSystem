@@ -1,4 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
+
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudentService } from '../student.service';
 import { Student } from '../student.model';
@@ -14,14 +15,14 @@ export class StudentDetails implements OnInit {
   private route = inject(ActivatedRoute);
   private studentService = inject(StudentService);
 
-  student: Student | null = null;
+  student = signal<Student | null>(null);
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.studentService.getStudentById(id).subscribe({
       next: (response) => {
-        this.student = response;
+        this.student.set(response);
         console.log('Student details loaded:', response);
       },
       error: (error) => {

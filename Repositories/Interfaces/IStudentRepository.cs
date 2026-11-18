@@ -8,5 +8,6 @@ namespace Student_Management_System.Repositories.Interfaces
         Student AddStudent(Student student);
         List<Student> GetAllStudents();
         Student? GetStudentById(int id);
+        void UpdateStudent(Student student);
     }
 }

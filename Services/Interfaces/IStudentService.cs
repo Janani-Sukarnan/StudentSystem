@@ -8,5 +8,6 @@ namespace Student_Management_System.Services.Interfaces
         StudentResponseDto CreateStudent(StudentCreateDto student);
         List<StudentResponseDto> GetAllStudents();
         StudentResponseDto? GetStudentById(int id);
+        bool UpdateStudent(int id, StudentUpdateDto studentDto);
     }
 }
